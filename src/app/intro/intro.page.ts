@@ -44,6 +44,10 @@ export class IntroPage {
     this.router.navigateByUrl('/home');
   }
 
+  ionViewDidEnter() {
+    console.log("Ya entre y vi la intro");
+    // Vamos a guardar en el storage que ya vio la intro
+  }
 
 
 }

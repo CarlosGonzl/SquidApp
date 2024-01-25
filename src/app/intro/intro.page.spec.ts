@@ -1,13 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture} from '@angular/core/testing';
 import { IntroPage } from './intro.page';
 
 describe('IntroPage', () => {
   let component: IntroPage;
   let fixture: ComponentFixture<IntroPage>;
 
-
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+}) ;

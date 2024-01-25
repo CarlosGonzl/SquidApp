@@ -11,7 +11,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
+    
     IonicModule,
     HomePageRoutingModule
   ],

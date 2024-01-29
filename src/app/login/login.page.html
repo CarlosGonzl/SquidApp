@@ -4,12 +4,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="background" >
+<ion-content class="background">
 <figure class="ion-text-center" >
    <img src= "../../assets/images/login.png" class="imagen-login">
 </figure>
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-  <ion-item>
+<form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+  <ion-item class = "desing-input">
     <ion-input type="email" label="Email" labelPlacement="floating" placeholder="Escriba aqui su email" formControlName="email"></ion-input>
   </ion-item>
   <div class="validation-message">
@@ -20,7 +20,7 @@
       ">{{validation.message}}</div>
     </ng-container>
   </div>
-  <ion-item>
+  <ion-item class = "desing-input">
     <ion-input type="password" label="Contraseña" labelPlacement="floating" placeholder="Escriba aqui su contraseña" formControlName="password"></ion-input>
   </ion-item> 
   <div class="validation-message">
@@ -47,4 +47,24 @@
     </ion-row>
   </ion-grid>
   </form>
+  <div class="validation-message">
+    {{loginMessage}}
+  </div>
+  <ion-header class= validation-message>¿Desea crear una cuenta?</ion-header>
+
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="6" offset="3">
+        <ion-button (click)="goToRegister()"
+                    color="primary"
+                    expand="full"
+                    shape="round"
+                    mode="ios"
+                    class="btn-primary">
+    Registrarse
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>

@@ -26,3 +26,17 @@
   text-decoration: none;
 }
 
+ion-content.background {
+  --background: url("../../assets/images/fondo-home.jpg") 0 0/100% 100% no-repeat;
+}
+
+.logo {
+  font-family: 'Lobster', cursive;
+  color: #753BBD;
+  text-align: center;
+  font-size: 50px;
+  position: absolute;
+  top: 5px; 
+  left: 5px;
+  text-shadow: 2px 2px 2px rgb(179, 106, 194);
+}

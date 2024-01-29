@@ -1,8 +1,8 @@
 .validation-message {
     color: rgb(253, 250, 250);
-    font-size: 12px;
+    font-size: 18px;
     margin-top: 5px;
-   
+    left: 4%;
 }
 
 
@@ -16,7 +16,11 @@ ion-content.background {
     position: center;
 }
 
-
 figure {
     margin-top: 50px;
+}
+
+.desing-input {
+    width: calc(100% - 8%); 
+    margin: 0 auto;
 }

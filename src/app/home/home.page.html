@@ -1,15 +1,19 @@
 
-<h1>
-    <img src= "../../assets/images/fondo_squid.png" height="195%" />
-</h1>
+<ion-content class="background">
 
-
-
-<ion-button (click)="goToIntro()"
-                  color="primary"
-                  expand="full"
-                  shape="round"
-                  mode="ios"
-                  class="btn-primary">
-  Ver proximos eventos
-</ion-button>
+<ion-title class="logo">SquidApp</ion-title>
+<ion-grid fixed>
+  <ion-row>
+    <ion-col size="6" offset="3.3">
+      <ion-button (click)="goToIntro()"
+            color="primary"
+            expand="full"
+            shape="round"
+            mode="ios"
+            class="btn-primary">
+            Ver proximos eventos
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>

@@ -16,8 +16,10 @@ export class IntroGuard implements CanActivate {
     async canActivate() {
       const mostreIntro = await this.storage.get('mostreLaIntro');
       if (mostreIntro) {
+        console.log('Ya mostre la intro');
         return true;
       } else {
+        console.log('No mostre la intro');
         this.router.navigateByUrl('/intro');
         return false;
       }

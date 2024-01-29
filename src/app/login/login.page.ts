@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-login',
@@ -15,12 +19,16 @@ export class LoginPage implements OnInit {
     ],
     password: [
       { type: "required", message: "La constraseña es obligatoria." },
-      { type: "minLength", message: "La contraseña ingresada es muy corta." }
+      { type: "password", message: "La contraseña ingresada es muy corta." }
     ]
   }
   loginMessage: any;
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private authService: AuthService,
+    private navCtrl: NavController,
+    private storage: Storage,
+    private router: Router
     ) {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.compose([
@@ -39,6 +47,8 @@ export class LoginPage implements OnInit {
   ],
     });
    }
+
+
    onSubmit() {
     if (this.loginForm.valid) {
       
@@ -51,5 +61,21 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
   }
+  
+  login(login_data: any){
+    console.log(login_data);
+    this.authService.loginUser(login_data).then(res => {
+      this.loginMessage=res;
+      this.storage.set('userLoggedIn', true);
+      this.navCtrl.navigateForward('/home');
+    }).catch(err => {
+      this.loginMessage = err;
+    });
+  }
 
+  goToRegister(){
+    console.log("go to register");
+    this.router.navigateByUrl('/register');
+    this.storage.set('mostreRegister', true);
+  }
 }

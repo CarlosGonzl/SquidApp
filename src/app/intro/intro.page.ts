@@ -43,7 +43,7 @@ export class IntroPage {
 
   goToHome(){
     console.log("go to home");
-    this.router.navigateByUrl('/home');
+    this.router.navigateByUrl('/menu/home');
   }
 
   ionViewDidEnter() {

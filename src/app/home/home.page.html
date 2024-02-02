@@ -1,3 +1,10 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
 <ion-content class="background">
 
@@ -16,4 +23,11 @@
     </ion-col>
   </ion-row>
 </ion-grid>
+<swiper-container
+[pagination]="true"
+[slidesPerView]="2">
+    <swiper-slide *ngFor="let slide of event_list">
+        <img src="{{slide.image}}">
+    </swiper-slide>
+</swiper-container>
 </ion-content>
